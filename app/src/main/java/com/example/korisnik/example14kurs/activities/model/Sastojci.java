@@ -8,12 +8,15 @@ public class Sastojci {
 
     private int id;
     private String naziv;
+    private Food food;
 
     public Sastojci(){}
 
-    public Sastojci(String naziv){
+    public Sastojci(int id, String naziv, Food food){
 
+        this.id = id;
         this.naziv = naziv;
+        this.food = food;
     }
 
     public int getId() {
@@ -30,5 +33,13 @@ public class Sastojci {
 
     public void setNaziv(String naziv) {
         this.naziv = naziv;
+    }
+
+    public Food getFood(){
+        return food;
+    }
+
+    public void setFood(Food food){
+        this.food = food;
     }
 }

@@ -23,8 +23,9 @@ public class Category {
         foods = new ArrayList<>();
     }
 
-    public Category(String naziv){
+    public Category(int id, String naziv){
 
+        this.id = id;
         this.naziv = naziv;
         foods = new ArrayList<>();
     }
@@ -43,6 +44,21 @@ public class Category {
 
     public void setNaziv(String naziv) {
         this.naziv = naziv;
+    }
+
+    public void addFood(Food food) {
+
+        foods.add(food);
+    }
+
+    public void removeFood(Food food) {
+
+        foods.remove(food);
+    }
+
+    public Food getFood(int position) {
+
+        return foods.get(position);
     }
 
     public List<Food> getFoods() {

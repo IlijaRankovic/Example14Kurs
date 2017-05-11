@@ -1,10 +1,19 @@
 package com.example.korisnik.example14kurs.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.korisnik.example14kurs.R;
+import com.example.korisnik.example14kurs.activities.model.Food;
+import com.example.korisnik.example14kurs.activities.provider.FoodProvider;
+
+import java.util.List;
 
 /**
  * Created by Korisnik on 11.5.2017..
@@ -21,6 +30,21 @@ public class FirstActivity extends Activity {
 
         Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onCreate", Toast.LENGTH_SHORT);
         toast.show();
+
+        final List<String> foodNaziv = FoodProvider.getFoodNaziv();
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, foodNaziv);
+        ListView listView = (ListView) findViewById(R.id.listofFood);
+
+        listView.setAdapter(dataAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
