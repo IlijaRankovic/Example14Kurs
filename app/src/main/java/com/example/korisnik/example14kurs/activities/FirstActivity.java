@@ -1,8 +1,10 @@
-package com.example.korisnik.example14kurs;
+package com.example.korisnik.example14kurs.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.example.korisnik.example14kurs.R;
 
 /**
  * Created by Korisnik on 11.5.2017..
