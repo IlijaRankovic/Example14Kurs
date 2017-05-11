@@ -15,8 +15,9 @@ public class Food {
 
     public Food() {}
 
-    public Food(String image, String naziv, String opis, float kalorijskaVrednost, float cena){
+    public Food(int id, String image, String naziv, String opis, float kalorijskaVrednost, float cena){
 
+        this.id = id;
         this.image = image;
         this.naziv = naziv;
         this.opis = opis;
@@ -72,9 +73,6 @@ public class Food {
         this.cena = cena;
     }
 
-    @Override
-    public String toString() {
-        return "Food(Id: " + id + ", image: " + image + ", naziv: " + naziv + ", opis: " + opis +
-                ", kalorijska vrednost: " + kalorijskaVrednost + ", cena: " + cena + ')';
-    }
+    /*@Override
+    public String toString() { return name;}*/
 }
